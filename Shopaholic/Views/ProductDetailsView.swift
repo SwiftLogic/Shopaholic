@@ -8,19 +8,20 @@
 import SwiftUI
 
 struct ProductDetailsView: View {
-    @Binding var product: Product
+    @Binding var product: Product?
     @Binding var show: Bool
-
+    
     var body: some View {
         // NavBar
-        VStack {
-            ProductDetailsNavBar(title: product.title,
-                                 show: $show)
+        if let product = product {
+            VStack {
+                ProductDetailsNavBar(title: product.title,
+                                     show: $show)
                 .padding()
-            Spacer()
-        }
-        .background(Color(product.image))
-    
+                Spacer()
+            }
+            .background(Color(product.image))
+        }        
     }
 }
 

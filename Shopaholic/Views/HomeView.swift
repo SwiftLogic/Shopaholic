@@ -11,28 +11,36 @@ struct HomeView: View {
     @State private var selectedTab: SwipeMenu = .handBag
     /// Powers tabIndcatorAnimation & animation to ProductDetailsView
     @Namespace private var animation
+    @State private var show = false
+    @State private var selectedProduct: Product?
 
     var body: some View {
-        VStack(spacing: 0) {
-            HomeNavBar()
-                .padding()
-                .background(Color.white)
-                .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
-            
-            ScrollView {
-                VStack {
-                    SectionTitle()
-                        .padding()
-                    SwipeMenuView(selectedTab: $selectedTab, animation: animation)
-                    
-                    ProductGridView(animation: animation)
-                        .padding()
-                    
-                    
+        ZStack {
+            // HomeView
+            VStack(spacing: 0) {
+                HomeNavBar()
+                    .padding()
+                    .background(Color.white)
+                    .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
+                
+                ScrollView {
+                    VStack {
+                        SectionTitle()
+                            .padding()
+                        SwipeMenuView(selectedTab: $selectedTab, animation: animation)
+                        
+                        ProductGridView(animation: animation, show: $show, selectedProduct: $selectedProduct)
+                            .padding()
+                    }
                 }
             }
+            .background(Color.black.opacity(0.05).ignoresSafeArea())
+            
+            if selectedProduct != nil && show {
+                ProductDetailsView(product: $selectedProduct, show: $show)
+            }
         }
-        .background(Color.black.opacity(0.05).ignoresSafeArea())
+//        .ignoresSafeArea()
     }
 }
 
@@ -68,12 +76,22 @@ private struct SwipeMenuView: View {
 
 private struct ProductGridView: View {
     var animation: Namespace.ID
+    @Binding var show: Bool
+    @Binding var selectedProduct: Product?
+    
     private let columns = Array(repeating: GridItem(.flexible(), spacing: 15), count: 2)
     
     var body: some View {
         LazyVGrid(columns: columns, spacing: 15) {
             ForEach(Product.placeholders) { product in
-                ProductView(product: product, animation: animation)
+                Button {
+                    withAnimation(.easeIn) {
+                        selectedProduct = product
+                        show.toggle()
+                    }
+                } label: {
+                    ProductView(product: product, animation: animation)
+                }
             }
         }
     }
