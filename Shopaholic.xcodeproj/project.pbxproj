@@ -34,6 +34,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E96C778A2A3F822A006EB979 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9ED77532A3F7BA800F54D87 /* HomeView.swift */,
+				E96C77882A3F8008006EB979 /* NavBar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E96C778B2A3F8234006EB979 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E9ED77392A3F7B3B00F54D87 = {
 			isa = PBXGroup;
 			children = (
@@ -53,9 +69,9 @@
 		E9ED77442A3F7B3B00F54D87 /* Shopaholic */ = {
 			isa = PBXGroup;
 			children = (
+				E96C778B2A3F8234006EB979 /* Model */,
+				E96C778A2A3F822A006EB979 /* Views */,
 				E9ED77452A3F7B3B00F54D87 /* ShopaholicApp.swift */,
-				E9ED77532A3F7BA800F54D87 /* HomeView.swift */,
-				E96C77882A3F8008006EB979 /* NavBar.swift */,
 				E9ED77492A3F7B3D00F54D87 /* Assets.xcassets */,
 				E9ED774B2A3F7B3D00F54D87 /* Preview Content */,
 			);

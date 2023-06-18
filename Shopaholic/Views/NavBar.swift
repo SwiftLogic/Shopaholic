@@ -19,6 +19,7 @@ struct NavBar: View {
                         .offset(x: 5, y: -5)
                 }
         }
+        .overlay(navTitle)
     }
     
     
@@ -26,6 +27,13 @@ struct NavBar: View {
         Circle()
             .fill(.red)
             .frame(width: 15, height: 15)
+    }
+    
+    private var navTitle: some View {
+        Text("Shop")
+            .font(.title)
+            .fontWeight(.heavy)
+            .foregroundColor(.black)
     }
     
 }
@@ -54,6 +62,13 @@ private struct NavItemButton: View {
 
 struct NavBar_Previews: PreviewProvider {
     static var previews: some View {
-        NavBar()
+        VStack {
+            NavBar()
+                .padding()
+                .background(Color.white)
+                .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
+            Spacer()
+        }
+        
     }
 }
