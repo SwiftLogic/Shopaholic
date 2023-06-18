@@ -17,7 +17,7 @@ struct TabButton: View {
         Button {
             withAnimation(.spring()) {selectedTab = tabItem}
         } label: {
-            VStack(alignment: .leading, spacing: 6) {
+            VStack(spacing: 6) {
                 Text(tabItem.description)
                     .fontWeight(.heavy)
                     .foregroundColor(tabItem == selectedTab ? .black : .gray)

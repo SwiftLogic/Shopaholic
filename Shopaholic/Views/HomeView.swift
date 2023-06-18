@@ -24,6 +24,11 @@ struct HomeView: View {
                         .padding()
                     SwipeMenuView(selectedTab: $selectedTab, animation: tabIndicatorAnimation)
                     
+                    ProductGridView()
+                        .padding()
+                    //                        .padding(.top, 10)
+                    
+                    
                 }
             }
         }
@@ -59,6 +64,21 @@ private struct SwipeMenuView: View {
         }
     }
 }
+
+
+private struct ProductGridView: View {
+    
+    private let columns = Array(repeating: GridItem(.flexible(), spacing: 15), count: 2)
+    
+    var body: some View {
+        LazyVGrid(columns: columns, spacing: 15) {
+            ForEach(BagModel.bags) { bag in
+                ProductView(bag: bag)
+            }
+        }
+    }
+}
+
 
 
 

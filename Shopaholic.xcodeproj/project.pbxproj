@@ -11,6 +11,7 @@
 		E96C778D2A3F8270006EB979 /* BagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C778C2A3F8270006EB979 /* BagModel.swift */; };
 		E96C77902A3F832C006EB979 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C778F2A3F832C006EB979 /* Color.swift */; };
 		E96C77922A3F864A006EB979 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C77912A3F864A006EB979 /* TabButton.swift */; };
+		E96C77962A3F8AF9006EB979 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C77952A3F8AF9006EB979 /* ProductView.swift */; };
 		E9ED77462A3F7B3B00F54D87 /* ShopaholicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ED77452A3F7B3B00F54D87 /* ShopaholicApp.swift */; };
 		E9ED774A2A3F7B3D00F54D87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9ED77492A3F7B3D00F54D87 /* Assets.xcassets */; };
 		E9ED774D2A3F7B3D00F54D87 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9ED774C2A3F7B3D00F54D87 /* Preview Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		E96C778C2A3F8270006EB979 /* BagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagModel.swift; sourceTree = "<group>"; };
 		E96C778F2A3F832C006EB979 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E96C77912A3F864A006EB979 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
+		E96C77952A3F8AF9006EB979 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		E9ED77422A3F7B3B00F54D87 /* Shopaholic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopaholic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9ED77452A3F7B3B00F54D87 /* ShopaholicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopaholicApp.swift; sourceTree = "<group>"; };
 		E9ED77492A3F7B3D00F54D87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 				E9ED77532A3F7BA800F54D87 /* HomeView.swift */,
 				E96C77882A3F8008006EB979 /* NavBar.swift */,
 				E96C77912A3F864A006EB979 /* TabButton.swift */,
+				E96C77952A3F8AF9006EB979 /* ProductView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				E9ED77462A3F7B3B00F54D87 /* ShopaholicApp.swift in Sources */,
 				E9ED77542A3F7BA800F54D87 /* HomeView.swift in Sources */,
 				E96C77922A3F864A006EB979 /* TabButton.swift in Sources */,
+				E96C77962A3F8AF9006EB979 /* ProductView.swift in Sources */,
 				E96C77902A3F832C006EB979 /* Color.swift in Sources */,
 				E96C77892A3F8008006EB979 /* NavBar.swift in Sources */,
 			);
