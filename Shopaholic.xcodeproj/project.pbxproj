@@ -8,17 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		E9ED77462A3F7B3B00F54D87 /* ShopaholicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ED77452A3F7B3B00F54D87 /* ShopaholicApp.swift */; };
-		E9ED77482A3F7B3B00F54D87 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ED77472A3F7B3B00F54D87 /* ContentView.swift */; };
 		E9ED774A2A3F7B3D00F54D87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9ED77492A3F7B3D00F54D87 /* Assets.xcassets */; };
 		E9ED774D2A3F7B3D00F54D87 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9ED774C2A3F7B3D00F54D87 /* Preview Assets.xcassets */; };
+		E9ED77542A3F7BA800F54D87 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ED77532A3F7BA800F54D87 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E9ED77422A3F7B3B00F54D87 /* Shopaholic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopaholic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9ED77452A3F7B3B00F54D87 /* ShopaholicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopaholicApp.swift; sourceTree = "<group>"; };
-		E9ED77472A3F7B3B00F54D87 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E9ED77492A3F7B3D00F54D87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9ED774C2A3F7B3D00F54D87 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E9ED77532A3F7BA800F54D87 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				E9ED77452A3F7B3B00F54D87 /* ShopaholicApp.swift */,
-				E9ED77472A3F7B3B00F54D87 /* ContentView.swift */,
+				E9ED77532A3F7BA800F54D87 /* HomeView.swift */,
 				E9ED77492A3F7B3D00F54D87 /* Assets.xcassets */,
 				E9ED774B2A3F7B3D00F54D87 /* Preview Content */,
 			);
@@ -137,8 +137,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9ED77482A3F7B3B00F54D87 /* ContentView.swift in Sources */,
 				E9ED77462A3F7B3B00F54D87 /* ShopaholicApp.swift in Sources */,
+				E9ED77542A3F7BA800F54D87 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,7 +195,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -249,7 +249,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -275,6 +275,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,6 +305,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
