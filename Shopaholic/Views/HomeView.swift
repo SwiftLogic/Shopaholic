@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var selectedTab: SwipeMenu = .handBag
+    @Namespace private var tabIndicatorAnimation
+
     var body: some View {
         VStack(spacing: 0) {
             NavBar()
@@ -19,7 +22,7 @@ struct HomeView: View {
                 VStack {
                     SectionTitle()
                         .padding()
-                    SwipeMenuView()
+                    SwipeMenuView(selectedTab: $selectedTab, animation: tabIndicatorAnimation)
                     
                 }
             }
@@ -41,13 +44,18 @@ private struct SectionTitle: View {
 }
 
 private struct SwipeMenuView: View {
+    @Binding var selectedTab: SwipeMenu
+    var animation: Namespace.ID
+    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack {
+            HStack(spacing: 15) {
                 ForEach(SwipeMenu.allCases, id: \.self) { tab in
-                    Text(tab.description)
+                    TabButton(tabItem: tab, selectedTab: $selectedTab, animation: animation)
                 }
             }
+            .padding(.horizontal)
+//            .padding(.top, 10)
         }
     }
 }
