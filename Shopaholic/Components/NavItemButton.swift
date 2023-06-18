@@ -10,10 +10,12 @@ import SwiftUI
 
 struct NavItemButton: View {
     var systemName: String
+    var color: Color
     var action: (() -> Void)?
     
-    init(systemName: String, action: (() -> Void)? = nil) {
+    init(systemName: String, color: Color = .black, action: (() -> Void)? = nil) {
         self.systemName = systemName
+        self.color = color
         self.action = action
     }
     
@@ -23,7 +25,7 @@ struct NavItemButton: View {
         } label: {
             Image(systemName: systemName)
                 .font(.title)
-                .foregroundColor(.black)
+                .foregroundColor(color)
         }
         
     }
