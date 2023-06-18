@@ -16,7 +16,7 @@ struct HomeView: View {
 
     var body: some View {
         ZStack {
-            // HomeView
+            /// HomeView
             VStack(spacing: 0) {
                 HomeNavBar()
                     .padding()
@@ -35,12 +35,11 @@ struct HomeView: View {
                 }
             }
             .background(Color.black.opacity(0.05).ignoresSafeArea())
-            
+            /// Details View
             if selectedProduct != nil && show {
-                ProductDetailsView(product: $selectedProduct, show: $show)
+                ProductDetailsView(product: $selectedProduct, show: $show, animation: animation)
             }
         }
-//        .ignoresSafeArea()
     }
 }
 
