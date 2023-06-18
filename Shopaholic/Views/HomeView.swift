@@ -72,8 +72,8 @@ private struct ProductGridView: View {
     
     var body: some View {
         LazyVGrid(columns: columns, spacing: 15) {
-            ForEach(BagModel.bags) { bag in
-                ProductView(bag: bag)
+            ForEach(Product.placeholders) { product in
+                ProductView(product: product)
             }
         }
     }
