@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E96C77892A3F8008006EB979 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C77882A3F8008006EB979 /* NavBar.swift */; };
+		E96C77892A3F8008006EB979 /* HomeNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C77882A3F8008006EB979 /* HomeNavBar.swift */; };
 		E96C778D2A3F8270006EB979 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C778C2A3F8270006EB979 /* Product.swift */; };
 		E96C77902A3F832C006EB979 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C778F2A3F832C006EB979 /* Color.swift */; };
 		E96C77922A3F864A006EB979 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C77912A3F864A006EB979 /* TabButton.swift */; };
 		E96C77962A3F8AF9006EB979 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C77952A3F8AF9006EB979 /* ProductView.swift */; };
+		E96C77982A3F8E61006EB979 /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C77972A3F8E61006EB979 /* ProductDetailsView.swift */; };
+		E96C779B2A3F8F80006EB979 /* NavItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C779A2A3F8F80006EB979 /* NavItemButton.swift */; };
 		E9ED77462A3F7B3B00F54D87 /* ShopaholicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ED77452A3F7B3B00F54D87 /* ShopaholicApp.swift */; };
 		E9ED774A2A3F7B3D00F54D87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9ED77492A3F7B3D00F54D87 /* Assets.xcassets */; };
 		E9ED774D2A3F7B3D00F54D87 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9ED774C2A3F7B3D00F54D87 /* Preview Assets.xcassets */; };
@@ -19,11 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E96C77882A3F8008006EB979 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
+		E96C77882A3F8008006EB979 /* HomeNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavBar.swift; sourceTree = "<group>"; };
 		E96C778C2A3F8270006EB979 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		E96C778F2A3F832C006EB979 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E96C77912A3F864A006EB979 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
 		E96C77952A3F8AF9006EB979 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
+		E96C77972A3F8E61006EB979 /* ProductDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
+		E96C779A2A3F8F80006EB979 /* NavItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavItemButton.swift; sourceTree = "<group>"; };
 		E9ED77422A3F7B3B00F54D87 /* Shopaholic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopaholic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9ED77452A3F7B3B00F54D87 /* ShopaholicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopaholicApp.swift; sourceTree = "<group>"; };
 		E9ED77492A3F7B3D00F54D87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,9 +50,10 @@
 			isa = PBXGroup;
 			children = (
 				E9ED77532A3F7BA800F54D87 /* HomeView.swift */,
-				E96C77882A3F8008006EB979 /* NavBar.swift */,
+				E96C77882A3F8008006EB979 /* HomeNavBar.swift */,
 				E96C77912A3F864A006EB979 /* TabButton.swift */,
 				E96C77952A3F8AF9006EB979 /* ProductView.swift */,
+				E96C77972A3F8E61006EB979 /* ProductDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -67,6 +72,14 @@
 				E96C778F2A3F832C006EB979 /* Color.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E96C77992A3F8F6D006EB979 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E96C779A2A3F8F80006EB979 /* NavItemButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		E9ED77392A3F7B3B00F54D87 = {
@@ -88,6 +101,7 @@
 		E9ED77442A3F7B3B00F54D87 /* Shopaholic */ = {
 			isa = PBXGroup;
 			children = (
+				E96C77992A3F8F6D006EB979 /* Components */,
 				E96C778E2A3F8321006EB979 /* Extensions */,
 				E96C778B2A3F8234006EB979 /* Model */,
 				E96C778A2A3F822A006EB979 /* Views */,
@@ -181,8 +195,10 @@
 				E9ED77542A3F7BA800F54D87 /* HomeView.swift in Sources */,
 				E96C77922A3F864A006EB979 /* TabButton.swift in Sources */,
 				E96C77962A3F8AF9006EB979 /* ProductView.swift in Sources */,
+				E96C77982A3F8E61006EB979 /* ProductDetailsView.swift in Sources */,
 				E96C77902A3F832C006EB979 /* Color.swift in Sources */,
-				E96C77892A3F8008006EB979 /* NavBar.swift in Sources */,
+				E96C779B2A3F8F80006EB979 /* NavItemButton.swift in Sources */,
+				E96C77892A3F8008006EB979 /* HomeNavBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

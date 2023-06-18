@@ -1,5 +1,5 @@
 //
-//  NavBar.swift
+//  HomeNavBar.swift
 //  Shopaholic
 //
 //  Created by Osaretin Uyigue on 6/18/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NavBar: View {
+struct HomeNavBar: View {
     var body: some View {
         HStack {
             NavItemButton(systemName: "line.horizontal.3.decrease")
@@ -38,32 +38,10 @@ struct NavBar: View {
     
 }
 
-
-private struct NavItemButton: View {
-    var systemName: String
-    var action: (() -> Void)?
-    
-    init(systemName: String, action: (() -> Void)? = nil) {
-        self.systemName = systemName
-        self.action = action
-    }
-    
-    var body: some View {
-        Button {
-            action?()
-        } label: {
-            Image(systemName: systemName)
-                .font(.title)
-                .foregroundColor(.black)
-        }
-        
-    }
-}
-
-struct NavBar_Previews: PreviewProvider {
+struct HomeNavBar_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            NavBar()
+            HomeNavBar()
                 .padding()
                 .background(Color.white)
                 .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)

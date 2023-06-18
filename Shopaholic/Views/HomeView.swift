@@ -14,7 +14,7 @@ struct HomeView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            NavBar()
+            HomeNavBar()
                 .padding()
                 .background(Color.white)
                 .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
@@ -73,7 +73,7 @@ private struct ProductGridView: View {
     var body: some View {
         LazyVGrid(columns: columns, spacing: 15) {
             ForEach(Product.placeholders) { product in
-                ProductView(product: product, animtion: animation)
+                ProductView(product: product, animation: animation)
             }
         }
     }
