@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E96C77892A3F8008006EB979 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C77882A3F8008006EB979 /* NavBar.swift */; };
 		E9ED77462A3F7B3B00F54D87 /* ShopaholicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ED77452A3F7B3B00F54D87 /* ShopaholicApp.swift */; };
 		E9ED774A2A3F7B3D00F54D87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9ED77492A3F7B3D00F54D87 /* Assets.xcassets */; };
 		E9ED774D2A3F7B3D00F54D87 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9ED774C2A3F7B3D00F54D87 /* Preview Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E96C77882A3F8008006EB979 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		E9ED77422A3F7B3B00F54D87 /* Shopaholic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopaholic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9ED77452A3F7B3B00F54D87 /* ShopaholicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopaholicApp.swift; sourceTree = "<group>"; };
 		E9ED77492A3F7B3D00F54D87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			children = (
 				E9ED77452A3F7B3B00F54D87 /* ShopaholicApp.swift */,
 				E9ED77532A3F7BA800F54D87 /* HomeView.swift */,
+				E96C77882A3F8008006EB979 /* NavBar.swift */,
 				E9ED77492A3F7B3D00F54D87 /* Assets.xcassets */,
 				E9ED774B2A3F7B3D00F54D87 /* Preview Content */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				E9ED77462A3F7B3B00F54D87 /* ShopaholicApp.swift in Sources */,
 				E9ED77542A3F7BA800F54D87 /* HomeView.swift in Sources */,
+				E96C77892A3F8008006EB979 /* NavBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
