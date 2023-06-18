@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ProductView: View {
     var product: Product
+    /// animation to detailsView
+    var animation: Namespace.ID
     
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
@@ -21,6 +23,7 @@ struct ProductView: View {
                     .resizable()
                     .scaledToFit()
                     .padding(20)
+                    .matchedGeometryEffect(id: product.image, in: animation)
             }
             Text(product.title)
                 .fontWeight(.heavy)
@@ -34,7 +37,8 @@ struct ProductView: View {
 }
 
 struct ProductView_Previews: PreviewProvider {
+    @Namespace static var namespace
     static var previews: some View {
-        ProductView(product: Product.placeholders.first!)
+        ProductView(product: Product.placeholders.first!, animation: namespace)
     }
 }

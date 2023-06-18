@@ -9,7 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var selectedTab: SwipeMenu = .handBag
-    @Namespace private var tabIndicatorAnimation
+    /// Powers tabIndcatorAnimation & animation to ProductDetailsView
+    @Namespace private var animation
 
     var body: some View {
         VStack(spacing: 0) {
@@ -22,11 +23,10 @@ struct HomeView: View {
                 VStack {
                     SectionTitle()
                         .padding()
-                    SwipeMenuView(selectedTab: $selectedTab, animation: tabIndicatorAnimation)
+                    SwipeMenuView(selectedTab: $selectedTab, animation: animation)
                     
-                    ProductGridView()
+                    ProductGridView(animation: animation)
                         .padding()
-                    //                        .padding(.top, 10)
                     
                     
                 }
@@ -67,13 +67,13 @@ private struct SwipeMenuView: View {
 
 
 private struct ProductGridView: View {
-    
+    var animation: Namespace.ID
     private let columns = Array(repeating: GridItem(.flexible(), spacing: 15), count: 2)
     
     var body: some View {
         LazyVGrid(columns: columns, spacing: 15) {
             ForEach(Product.placeholders) { product in
-                ProductView(product: product)
+                ProductView(product: product, animtion: animation)
             }
         }
     }
