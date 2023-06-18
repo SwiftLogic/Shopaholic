@@ -23,4 +23,25 @@ struct BagModel: Identifiable {
     ]
 }
 
-var scrollTabs = ["Hand Bag","Jewellery","Footwear","Dresses","Beauty"]
+enum SwipeMenu: CaseIterable, CustomStringConvertible {
+    case handBag
+    case jewellery
+    case footwear
+    case dresses
+    case beauty
+    
+    var description: String {
+        switch self {
+        case .handBag:
+            return "Hand Bag"
+        case .jewellery:
+            return "Jewellery"
+        case .footwear:
+            return "Footwear"
+        case .dresses:
+            return "Dresses"
+        case .beauty:
+            return "Beauty"
+        }
+    }
+}
