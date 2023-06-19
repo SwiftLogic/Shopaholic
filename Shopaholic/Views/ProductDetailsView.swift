@@ -93,10 +93,23 @@ private struct ProductDetailsInfoPanView: View {
             }
             productDescriptionTextView
             productCartCount
+            buyNowButton
+                .padding(.top)
+                .padding(.bottom, windowBottomInset == 0 ? 15 : 0)
             Spacer()
         }
     }
     
+    var windowBottomInset: Int {
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            if let window = windowScene.windows.first {
+                let safeAreaInsetsBottom = window.safeAreaInsets.bottom
+                let result = safeAreaInsetsBottom == 0 ? 15 : 0
+                return result
+            }
+        }
+        return 0
+    }
     
     private var productColorPickerView: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -179,6 +192,23 @@ private struct ProductDetailsInfoPanView: View {
                 .padding(10)
                 .background(Color.red)
                 .clipShape(Circle())
+        }
+
+    }
+    
+    private let screenWidth = UIScreen.main.bounds.width
+    private var buyNowButton: some View {
+        Button {
+            //
+        } label: {
+            Text("BUY NOW")
+                .font(.title2)
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+                .padding(.vertical)
+                .frame(width: screenWidth - 30)
+                .background(Color(product.image))
+                .clipShape(Capsule())
         }
 
     }
