@@ -11,6 +11,7 @@ struct ProductDetailsView: View {
     @Binding var product: Product?
     @Binding var show: Bool
     var animation: Namespace.ID
+    @State private var selectedColor = Color.clear
     
     var body: some View {
         if let product = product {
@@ -24,10 +25,15 @@ struct ProductDetailsView: View {
                     .padding()
                     .padding(.top, 10)
                 
-                Spacer()
+                ProductAppearancePanView(product: product,
+                                         selectedColor: $selectedColor)
+                    .padding()
             }
             .background(Color(product.image))
             .background(Color.white)
+            .onAppear {
+                selectedColor = Color(product.image)
+            }
         }        
     }
 }
@@ -65,6 +71,46 @@ private struct ProductDetailsHeaderView: View {
     }
 }
 
+private struct ProductAppearancePanView: View {
+    let product: Product
+    @Binding var selectedColor: Color
+    
+    var body: some View {
+        VStack {
+            HStack {
+                productColorPickerView
+                Spacer()
+                productSizeTextView
+            }
+        }
+    }
+    
+    
+    private var productColorPickerView: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Color")
+                .foregroundColor(.gray)
+            
+            HStack(spacing: 15) {
+                // ColorPicker
+                ColorPickerButton(color: Color(product.image),
+                                  selectedColor: $selectedColor)
+                ColorPickerButton(color: .yellow,
+                                  selectedColor: $selectedColor)
+                ColorPickerButton(color: .green,
+                                  selectedColor: $selectedColor)
+            }
+        }
+    }
+    
+    
+    private var productSizeTextView: some View {
+        VStack {
+            Text("Size")
+            Text("12 cm")
+        }
+    }
+}
 
 struct ProductDetailsView_Previews: PreviewProvider {
     @Namespace static var namespace
