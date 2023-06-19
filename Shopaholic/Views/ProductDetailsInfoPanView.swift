@@ -13,18 +13,20 @@ struct ProductDetailsInfoPanView: View {
     @State private var count = 1
     
     var body: some View {
-        VStack {
-            HStack {
-                productColorPickerView
+        ScrollView(showsIndicators: false) {
+            VStack {
+                HStack {
+                    productColorPickerView
+                    Spacer()
+                    productSizeTextView
+                }
+                productDescriptionTextView
+                cartItemCountView
+                buyNowButton
+                    .padding(.top)
+                    .padding(.bottom, windowBottomInset == 0 ? 15 : 0)
                 Spacer()
-                productSizeTextView
             }
-            productDescriptionTextView
-            cartItemCountView
-            buyNowButton
-                .padding(.top)
-                .padding(.bottom, windowBottomInset == 0 ? 15 : 0)
-            Spacer()
         }
     }
     

@@ -12,37 +12,43 @@ struct ProductDetailsView: View {
     @Binding var show: Bool
     var animation: Namespace.ID
     @State private var selectedColor = Color.clear
+    private let isSmallDevice = UIScreen.main.bounds.height < 750
     
     var body: some View {
         if let product = product {
-            VStack {
-                ProductDetailsNavBar(
-                    title: product.title,
-                    show: $show)
-                .padding()
-                
-                ProductDetailsHeaderView(product: product, animation: animation)
+                VStack {
+                    ProductDetailsNavBar(
+                        title: product.title,
+                        show: $show)
                     .padding()
-                    .padding(.top, 10)
-                    .zIndex(1)
-                
-                ProductDetailsInfoPanView(product: product,
-                                         selectedColor: $selectedColor)
-                .padding(.horizontal)
-                .padding(.top, -20)
-                .background {
-                    Color.white
-                        .cornerRadius(35, corners: [.topLeft, .topRight])
-                        .padding(.top, -100)
+                    
+                    ProductDetailsHeaderView(product: product, animation: animation)
+                        .padding()
+                        .padding(.top, isSmallDevice ? -10 : 10)
+                        .zIndex(1)
+                    
+                    ProductDetailsInfoPanView(product: product,
+                                              selectedColor: $selectedColor)
+                    .padding(.horizontal)
+                    .padding(.top, -50)
+                    .background {
+                        Color.white
+                            .cornerRadius(35, corners: [.topLeft, .topRight])
+                            .padding(.top, -100)
+                            .frame(height: UIScreen.main.bounds.height / 2.2)
+                            .offset(y: 40)
+                    }
+                    .zIndex(0)
                 }
-                .zIndex(0)
-            }
-            .background(Color(product.image))
-            .background(Color.white)
-            .onAppear {
-                selectedColor = Color(product.image)
-            }
-        }        
+                .background {
+                    Color(product.image)
+                        .frame(height: UIScreen.main.bounds.height)
+                        .ignoresSafeArea()
+                }
+                .onAppear {
+                    selectedColor = Color(product.image)
+                }
+        }
     }
 }
 
@@ -81,7 +87,7 @@ private struct ProductDetailsHeaderView: View {
 
 struct ProductDetailsView_Previews: PreviewProvider {
     @Namespace static var namespace
-
+    
     static var previews: some View {
         ProductDetailsView(product: .constant(Product.placeholders.first!), show: .constant(true), animation: namespace)
     }
