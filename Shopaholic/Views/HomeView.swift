@@ -83,28 +83,28 @@ private struct ProductGridView: View {
     var body: some View {
         LazyVGrid(columns: columns, spacing: 15) {
             ForEach(Product.placeholders) { product in
-                Button {
-                    // showing details view animation experiments
-                    //ksoft
-//                    withAnimation(.easeIn) {
-//                        selectedProduct = product
-//                        showDetailsView.toggle()
-//                    }
-                    
-//                    withAnimation(.easeIn(duration: 0.3)) {
-//                        selectedProduct = product
-//                        showDetailsView.toggle()
-//                    }
-                    
-                    withAnimation(.interactiveSpring(response: 0.3, dampingFraction: 1, blendDuration: 1)) {
-                        selectedProduct = product
-                        showDetailsView.toggle()
+                ProductView(product: product, animation: animation)
+                    .onTapGesture {
+                        didSelect(product)
                     }
-                    
-                } label: {
-                    ProductView(product: product, animation: animation)
-                }
             }
+        }
+    }    
+    
+    // showing details view animation experiments
+    //                    ksoft
+    //                    withAnimation(.easeIn) {
+    //                        selectedProduct = product
+    //                        showDetailsView.toggle()
+    //                    }
+    //                    withAnimation(.easeIn(duration: 0.3)) {
+    //                        selectedProduct = product
+    //                        showDetailsView.toggle()
+    //                    }
+    private func didSelect(_ product: Product) {
+        withAnimation(.interactiveSpring(response: 0.3, dampingFraction: 1, blendDuration: 1)) {
+            selectedProduct = product
+            showDetailsView.toggle()
         }
     }
 }
