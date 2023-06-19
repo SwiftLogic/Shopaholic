@@ -22,7 +22,8 @@ struct HomeView: View {
                     .padding()
                     .background(Color.white)
                     .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
-                
+                    .opacity(showDetailsView ? 0 : 1)
+
                 ScrollView {
                     VStack {
                         SectionTitle()
@@ -67,7 +68,6 @@ private struct SwipeMenuView: View {
                 }
             }
             .padding(.horizontal)
-//            .padding(.top, 10)
         }
     }
 }
@@ -84,10 +84,23 @@ private struct ProductGridView: View {
         LazyVGrid(columns: columns, spacing: 15) {
             ForEach(Product.placeholders) { product in
                 Button {
-                    withAnimation(.easeIn) {
+                    // showing details view animation experiments
+                    //ksoft
+//                    withAnimation(.easeIn) {
+//                        selectedProduct = product
+//                        showDetailsView.toggle()
+//                    }
+                    
+//                    withAnimation(.easeIn(duration: 0.3)) {
+//                        selectedProduct = product
+//                        showDetailsView.toggle()
+//                    }
+                    
+                    withAnimation(.interactiveSpring(response: 0.3, dampingFraction: 1, blendDuration: 1)) {
                         selectedProduct = product
                         showDetailsView.toggle()
                     }
+                    
                 } label: {
                     ProductView(product: product, animation: animation)
                 }

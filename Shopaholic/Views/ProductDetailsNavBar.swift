@@ -15,7 +15,11 @@ struct ProductDetailsNavBar: View {
         VStack(alignment: .leading) {
             HStack {
                 NavItemButton(systemName: "chevron.left", color: .white) {
-                    withAnimation(.easeOut) {showDetailsView.toggle()}
+                    //ksoft
+//                    withAnimation(.easeOut) {showDetailsView.toggle()}
+                    withAnimation(.interactiveSpring(response: 0.3, dampingFraction: 1, blendDuration: 1)) {
+                        showDetailsView.toggle()
+                    }
                 }
                 Spacer()
                 NavItemButton(systemName: "cart", color: .white)
@@ -23,7 +27,6 @@ struct ProductDetailsNavBar: View {
             
             navBarTitle
                 .padding(.top)
-            
         }
     }
     

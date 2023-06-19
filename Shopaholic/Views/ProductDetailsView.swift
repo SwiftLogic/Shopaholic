@@ -39,11 +39,13 @@ struct ProductDetailsView: View {
                             .offset(y: 40)
                     }
                     .zIndex(0)
+                    .opacity(showDetailsView ? 1 : 0)
                 }
                 .background {
                     Color(product.image)
                         .frame(height: UIScreen.main.bounds.height)
                         .ignoresSafeArea()
+                        .opacity(showDetailsView ? 1 : 0)
                 }
                 .onAppear {
                     selectedColor = Color(product.image)
