@@ -42,7 +42,7 @@ struct ProductDetailsView: View {
                     .opacity(showDetailsView ? 1 : 0)
                 }
                 .background {
-                    Color(product.image)
+                    selectedColor
                         .frame(height: UIScreen.main.bounds.height)
                         .ignoresSafeArea()
                         .opacity(showDetailsView ? 1 : 0)

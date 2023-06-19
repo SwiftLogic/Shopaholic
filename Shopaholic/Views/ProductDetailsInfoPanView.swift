@@ -135,7 +135,7 @@ struct ProductDetailsInfoPanView: View {
                 .foregroundColor(.white)
                 .padding(.vertical)
                 .frame(width: screenWidth - 30)
-                .background(Color(product.image))
+                .background(selectedColor)
                 .clipShape(Capsule())
         }
 
