@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E94A9CA72A4082B00021E4E1 /* ColorPickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A9CA62A4082B00021E4E1 /* ColorPickerButton.swift */; };
+		E95AA6072A40872A00F8AF75 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AA6062A40872A00F8AF75 /* RoundedCorner.swift */; };
 		E96C77892A3F8008006EB979 /* HomeNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C77882A3F8008006EB979 /* HomeNavBar.swift */; };
 		E96C778D2A3F8270006EB979 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C778C2A3F8270006EB979 /* Product.swift */; };
 		E96C77902A3F832C006EB979 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C778F2A3F832C006EB979 /* Color.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		E94A9CA62A4082B00021E4E1 /* ColorPickerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerButton.swift; sourceTree = "<group>"; };
+		E95AA6062A40872A00F8AF75 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		E96C77882A3F8008006EB979 /* HomeNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavBar.swift; sourceTree = "<group>"; };
 		E96C778C2A3F8270006EB979 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		E96C778F2A3F832C006EB979 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				E96C779A2A3F8F80006EB979 /* NavItemButton.swift */,
+				E95AA6062A40872A00F8AF75 /* RoundedCorner.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				E96C779D2A3F9310006EB979 /* ProductDetailsNavBar.swift in Sources */,
 				E94A9CA72A4082B00021E4E1 /* ColorPickerButton.swift in Sources */,
 				E96C77902A3F832C006EB979 /* Color.swift in Sources */,
+				E95AA6072A40872A00F8AF75 /* RoundedCorner.swift in Sources */,
 				E96C779B2A3F8F80006EB979 /* NavItemButton.swift in Sources */,
 				E96C77892A3F8008006EB979 /* HomeNavBar.swift in Sources */,
 			);

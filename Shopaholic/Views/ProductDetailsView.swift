@@ -24,10 +24,16 @@ struct ProductDetailsView: View {
                 ProductDetailsHeaderView(product: product, animation: animation)
                     .padding()
                     .padding(.top, 10)
+                    .zIndex(1)
                 
                 ProductAppearancePanView(product: product,
                                          selectedColor: $selectedColor)
                     .padding()
+                    .padding(.top, -20)
+                    .background {
+                        Color.white.padding(.top, -100)
+                    }
+                    .zIndex(0)
             }
             .background(Color(product.image))
             .background(Color.white)
@@ -82,6 +88,7 @@ private struct ProductAppearancePanView: View {
                 Spacer()
                 productSizeTextView
             }
+            Spacer()
         }
     }
     
@@ -103,11 +110,15 @@ private struct ProductAppearancePanView: View {
         }
     }
     
-    
     private var productSizeTextView: some View {
         VStack {
             Text("Size")
+                .fontWeight(.semibold)
+                .foregroundColor(.black)
+            
             Text("12 cm")
+                .fontWeight(.heavy)
+                .foregroundColor(.black)
         }
     }
 }
