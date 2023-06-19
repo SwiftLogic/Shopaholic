@@ -9,13 +9,13 @@ import SwiftUI
 
 struct ProductDetailsNavBar: View {
     let title: String
-    @Binding var show: Bool
+    @Binding var showDetailsView: Bool
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
                 NavItemButton(systemName: "chevron.left", color: .white) {
-                    withAnimation(.easeOut) {show.toggle()}
+                    withAnimation(.easeOut) {showDetailsView.toggle()}
                 }
                 Spacer()
                 NavItemButton(systemName: "cart", color: .white)
@@ -45,7 +45,7 @@ struct ProductDetailsNavBar: View {
 struct ProductDetailsNavBar_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            ProductDetailsNavBar(title: "Office Bag", show: .constant(true))
+            ProductDetailsNavBar(title: "Office Bag", showDetailsView: .constant(true))
                 .padding()
                 .background(Color.theme.bag1)
             Spacer()

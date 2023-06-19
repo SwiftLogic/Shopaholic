@@ -11,7 +11,7 @@ struct HomeView: View {
     @State private var selectedTab: SwipeMenu = .handBag
     /// Powers tabIndcatorAnimation & animation to ProductDetailsView
     @Namespace private var animation
-    @State private var show = false
+    @State private var showDetailsView = false
     @State private var selectedProduct: Product?
 
     var body: some View {
@@ -29,15 +29,15 @@ struct HomeView: View {
                             .padding()
                         SwipeMenuView(selectedTab: $selectedTab, animation: animation)
                         
-                        ProductGridView(animation: animation, show: $show, selectedProduct: $selectedProduct)
+                        ProductGridView(animation: animation, showDetailsView: $showDetailsView, selectedProduct: $selectedProduct)
                             .padding()
                     }
                 }
             }
             .background(Color.black.opacity(0.05).ignoresSafeArea())
             /// Details View
-            if selectedProduct != nil && show {
-                ProductDetailsView(product: $selectedProduct, show: $show, animation: animation)
+            if selectedProduct != nil && showDetailsView {
+                ProductDetailsView(product: $selectedProduct, showDetailsView: $showDetailsView, animation: animation)
             }
         }
     }
@@ -75,7 +75,7 @@ private struct SwipeMenuView: View {
 
 private struct ProductGridView: View {
     var animation: Namespace.ID
-    @Binding var show: Bool
+    @Binding var showDetailsView: Bool
     @Binding var selectedProduct: Product?
     
     private let columns = Array(repeating: GridItem(.flexible(), spacing: 15), count: 2)
@@ -86,7 +86,7 @@ private struct ProductGridView: View {
                 Button {
                     withAnimation(.easeIn) {
                         selectedProduct = product
-                        show.toggle()
+                        showDetailsView.toggle()
                     }
                 } label: {
                     ProductView(product: product, animation: animation)

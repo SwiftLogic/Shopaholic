@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProductDetailsView: View {
     @Binding var product: Product?
-    @Binding var show: Bool
+    @Binding var showDetailsView: Bool
     var animation: Namespace.ID
     @State private var selectedColor = Color.clear
     private let isSmallDevice = UIScreen.main.bounds.height < 750
@@ -19,7 +19,7 @@ struct ProductDetailsView: View {
                 VStack {
                     ProductDetailsNavBar(
                         title: product.title,
-                        show: $show)
+                        showDetailsView: $showDetailsView)
                     .padding()
                     
                     ProductDetailsHeaderView(product: product, animation: animation)
@@ -89,6 +89,6 @@ struct ProductDetailsView_Previews: PreviewProvider {
     @Namespace static var namespace
     
     static var previews: some View {
-        ProductDetailsView(product: .constant(Product.placeholders.first!), show: .constant(true), animation: namespace)
+        ProductDetailsView(product: .constant(Product.placeholders.first!), showDetailsView: .constant(true), animation: namespace)
     }
 }
