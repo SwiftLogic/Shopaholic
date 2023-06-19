@@ -90,7 +90,7 @@ private struct ProductDetailsInfoPanView: View {
                 productColorPickerView
                 Spacer()
                 productSizeTextView
-            }           
+            }
             productDescriptionTextView
             productCartCount
             Spacer()
@@ -137,16 +137,20 @@ private struct ProductDetailsInfoPanView: View {
     }
     
     private var productCartCount: some View {
-        HStack(spacing: 15) {
+        HStack(spacing: 20) {
             createButton(for: "minus") {
                 guard count > 0 else {return}
                 count -= 1
             }
+            
             Text(count.description)
+                .font(.title2)
                 .foregroundColor(.gray)
+            
             createButton(for: "plus") {
                 count += 1
             }
+            
             Spacer()
             favoriteButton
         }
@@ -156,6 +160,7 @@ private struct ProductDetailsInfoPanView: View {
     private func createButton(for systemName: String, onTapAction: @escaping (() -> Void)) -> some View {
         Button(action: onTapAction) {
             Image(systemName: systemName)
+                .font(.title2)
                 .foregroundColor(.gray)
                 .frame(width: 35, height: 35)
                 .background(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
@@ -170,8 +175,7 @@ private struct ProductDetailsInfoPanView: View {
         } label: {
             Image(systemName: "suit.heart.fill")
                 .foregroundColor(.white)
-                .font(.system(size: 22))
-                .fontWeight(.heavy)
+                .font(.title2)
                 .padding(10)
                 .background(Color.red)
                 .clipShape(Circle())
