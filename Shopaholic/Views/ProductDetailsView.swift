@@ -26,14 +26,16 @@ struct ProductDetailsView: View {
                     .padding(.top, 10)
                     .zIndex(1)
                 
-                ProductAppearancePanView(product: product,
+                ProductDetailsInfoPanView(product: product,
                                          selectedColor: $selectedColor)
-                    .padding()
-                    .padding(.top, -20)
-                    .background {
-                        Color.white.padding(.top, -100)
-                    }
-                    .zIndex(0)
+                .padding(.horizontal)
+                .padding(.top, -20)
+                .background {
+                    Color.white
+                        .cornerRadius(35, corners: [.topLeft, .topRight])
+                        .padding(.top, -100)
+                }
+                .zIndex(0)
             }
             .background(Color(product.image))
             .background(Color.white)
@@ -77,9 +79,10 @@ private struct ProductDetailsHeaderView: View {
     }
 }
 
-private struct ProductAppearancePanView: View {
+private struct ProductDetailsInfoPanView: View {
     let product: Product
     @Binding var selectedColor: Color
+    @State private var count = 1
     
     var body: some View {
         VStack {
@@ -87,7 +90,9 @@ private struct ProductAppearancePanView: View {
                 productColorPickerView
                 Spacer()
                 productSizeTextView
-            }
+            }           
+            productDescriptionTextView
+            productCartCount
             Spacer()
         }
     }
@@ -96,6 +101,7 @@ private struct ProductAppearancePanView: View {
     private var productColorPickerView: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Color")
+                .fontWeight(.bold)
                 .foregroundColor(.gray)
             
             HStack(spacing: 15) {
@@ -121,6 +127,58 @@ private struct ProductAppearancePanView: View {
                 .foregroundColor(.black)
         }
     }
+    
+    
+    private var productDescriptionTextView: some View {
+        Text("Whether you are heading to work or travelling, a trendy handbag or clutch will add as the perfect accessory with your outfit. Carry your daily essentials in style as you have a choice of shopping for bags.")
+            .foregroundColor(.gray)
+            .multilineTextAlignment(.leading)
+            .padding(.vertical)
+    }
+    
+    private var productCartCount: some View {
+        HStack(spacing: 15) {
+            createButton(for: "minus") {
+                guard count > 0 else {return}
+                count -= 1
+            }
+            Text(count.description)
+                .foregroundColor(.gray)
+            createButton(for: "plus") {
+                count += 1
+            }
+            Spacer()
+            favoriteButton
+        }
+        
+    }
+    
+    private func createButton(for systemName: String, onTapAction: @escaping (() -> Void)) -> some View {
+        Button(action: onTapAction) {
+            Image(systemName: systemName)
+                .foregroundColor(.gray)
+                .frame(width: 35, height: 35)
+                .background(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
+        }
+    }
+
+    
+    
+    private var favoriteButton: some View {
+        Button {
+            //
+        } label: {
+            Image(systemName: "suit.heart.fill")
+                .foregroundColor(.white)
+                .font(.system(size: 22))
+                .fontWeight(.heavy)
+                .padding(10)
+                .background(Color.red)
+                .clipShape(Circle())
+        }
+
+    }
+    
 }
 
 struct ProductDetailsView_Previews: PreviewProvider {
